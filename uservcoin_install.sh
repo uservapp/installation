@@ -1,16 +1,16 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='ultranatum.conf'
-CONFIGFOLDER='/root/.ultranatumcore'
-COIN_DAEMON='ultranatumd'
-COIN_CLI='ultranatum-cli'
+CONFIG_FILE='uservcoin.conf'
+CONFIGFOLDER='/root/.uservcoincore'
+COIN_DAEMON='uservcoind'
+COIN_CLI='uservcoin-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/ultranatum/ultranatum/releases/download/1.1.0.2/ultranatumcore-1.1.0.2-linux64.tar.gz'
+COIN_TGZ='https://github.com/uservapp/uservcoin/releases/download/v1.0.0.0/uservcoincore-1.0.0.0-linux64.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='Ultranatum'
-COIN_PORT=23654
-RPC_PORT=23655
+COIN_NAME='UservCoin'
+COIN_PORT=56120
+RPC_PORT=56121
 
 NODEIP=$(curl -s4 api.ipify.org)
 
