@@ -6,8 +6,8 @@ Shell script to install a [UservCoin Masternode](http://uservcoin.com/) on a Lin
 ```
 wget -N https://raw.githubusercontent.com/uservapp/installation/master/uservcoin_install.sh
 bash uservcoin_install.sh
-Wait until you request "Private Key" and paste your "masternode genkey" generated in the following steps.
 ```
+Wait until you request "Private Key" and paste your "masternode genkey" generated in the following steps.
 ***
 
 ## Desktop wallet setup  
