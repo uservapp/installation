@@ -28,8 +28,8 @@ Alias Address Privkey TxHash TxIndex
 * Alias: **MN1**
 * Address: **VPS_IP:PORT**
 * Privkey: **Masternode Private Key**
-* TxHash: **First value from Step 6**
-* TxIndex:  **Second value from Step 6**
+* TxHash: **First value from masternode outputs**
+* TxIndex:  **Second value from masternode outputs**
 ```
 Example: 
 mn1 127.0.0.1:56120 U3HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
