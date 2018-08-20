@@ -1,23 +1,25 @@
 # Ultranatum
-Shell script to install a [Ultranatum Masternode](http://ultranatum.org/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
+Shell script to install a [UservCoin Masternode](http://uservcoin.com/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
 ***
 
 ## Installation
 ```
-wget -N https://raw.githubusercontent.com/zoldur/Ultranatum/master/ultranatum_install.sh
-bash ultranatum_install.sh
+wget -N https://raw.githubusercontent.com/uservapp/installation/master/uservcoin_install.sh
+bash uservcoin_install.sh
+Wait until you request "Private Key" and paste your "masternode genkey" generated in the following steps.
 ```
 ***
 
 ## Desktop wallet setup  
 
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
-1. Open the Ultranatum Desktop Wallet.  
-2. Go to RECEIVE and create a New Address: **MN1**  
-3. Send **1000** ULTRA to **MN1**. You need to send all 1000 coins in one single transaction.
+1. Open the UservCoin Desktop Wallet.  
+2. Go to RECEIVE and create a New Address: (Example): **MN1**  
+3. Send **3000** USERV to **MN1**. You need to send all 3000 coins in one single transaction.
 4. Wait for 15 confirmations.  
 5. Go to **Help -> "Debug Window - Console"**  
-6. Type the following command: **masternode outputs**  
+6. Type the following command and copy the generated key to Notepad: **masternode genkey**  And **masternode outputs**
+(Use **masternode genkey** in the VPS when you request "Private Key").
 7. Go to  **Tools -> "Open Masternode Configuration File"**
 8. Add the following entry:
 ```
@@ -28,6 +30,11 @@ Alias Address Privkey TxHash TxIndex
 * Privkey: **Masternode Private Key**
 * TxHash: **First value from Step 6**
 * TxIndex:  **Second value from Step 6**
+```
+Example: 
+mn1 127.0.0.1:56120 U3HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
+
+```
 9. Save and close the file.
 10. Go to **Masternode Tab**. If you tab is not shown, please enable it from: **Settings - Options - Wallet - Show Masternodes Tab**
 11. Click **Update status** to see your node. If it is not shown, close the wallet and start it again. Make sure the wallet is un
@@ -38,29 +45,24 @@ masternode start-alias MN1
 ```
 14. Login to your VPS and check your masternode status by running the following command:
 ```
-ultranatum-cli masternode status
+uservcoin-cli masternode status
 ```
 ***
 
 ## Usage:
 ```
-ultranatum-cli masternode status  
-ultranatum-cli getinfo
+uservcoin-cli masternode status  
+uservcoin-cli getinfo
 ```
-Also, if you want to check/start/stop **Ultranatum**, run one of the following commands as **root**:
+Also, if you want to check/start/stop **UservCoin**, run one of the following commands as **root**:
 
 ```
-systemctl status Ultranatum #To check if Ultranatum service is running  
-systemctl start Ultranatum #To start Ultranatum service  
-systemctl stop Ultranatum #To stop Ultranatum service  
-systemctl is-enabled Ultranatum #To check if Ultranatum service is enabled on boot  
+systemctl status UservCoin #To check if UservCoin service is running  
+systemctl start UservCoin #To start UservCoin service  
+systemctl stop UservCoin #To stop UservCoin service  
+systemctl is-enabled UservCoin #To check if UservCoin service is enabled on boot  
 ```  
 ***
 
-## Donations
-
-Any donation is highly appreciated
-
-**BTC**: 3MQLEcHXVvxpmwbB811qiC1c6g21ZKa7Jh  
-**ETH**: 0x26B9dDa0616FE0759273D651e77Fe7dd7751E01E  
-**LTC**: LNZpK4rCd1JVSB3rGKTAnTkudV9So9zexB  
+Credits:
+https://github.com/zoldur
