@@ -1,16 +1,16 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='uservcoin.conf'
-CONFIGFOLDER='/root/.uservcoincore'
-COIN_DAEMON='uservcoind'
-COIN_CLI='uservcoin-cli'
+CONFIG_FILE='userv.conf'
+CONFIGFOLDER='/root/.userv'
+COIN_DAEMON='uservd'
+COIN_CLI='userv-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/uservapp/uservcoin/releases/download/v1.0.0.0/uservcoincore-1.0.0.0-linux64.tar.gz'
+COIN_TGZ='https://github.com/uservapp/uservcoin/releases/download/v2.0.0.0/userv-2.0.0.0-x86_64-linux-gnu.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='UservCoin'
-COIN_PORT=56120
-RPC_PORT=56121
+COIN_NAME='Userv'
+COIN_PORT=46121
+RPC_PORT=46122
 
 NODEIP=$(curl -s4 api.ipify.org)
 
