@@ -3,7 +3,7 @@
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='userv.conf'
 CONFIGFOLDER='/root/.userv'
-COIN_DAEMON='uservd'
+COIN_DAEMON='userv'
 COIN_CLI='userv-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_TGZ='https://github.com/uservapp/uservcoin/releases/download/v2.0.0.0/userv-2.0.0.0-x86_64-linux-gnu.tar.gz'
@@ -21,13 +21,13 @@ NC='\033[0m'
 
 
 function download_node() {
-  echo -e "Prepare to download ${GREEN}$COIN_NAME${NC}."
+  echo -e "Preparing to download ${GREEN}$COIN_NAME${NC}."
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
   compile_error
-  tar xvzf $COIN_ZIP --strip 2 >/dev/null 2>&1
-  chmod +x $COIN_DAEMON $COIN_CLI
-  cp $COIN_DAEMON $COIN_CLI $COIN_PATH
+  tar xvzf $COIN_ZIP  >/dev/null 2>&1
+  chmod 755 $COIN_DAEMON $COIN_CLI >/dev/null 2>&1
+  cp $COIN_DAEMON $COIN_CLI $COIN_PATH >/dev/null 2>&1
   cd - >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   clear
@@ -39,24 +39,19 @@ function configure_systemd() {
 [Unit]
 Description=$COIN_NAME service
 After=network.target
-
 [Service]
 User=root
 Group=root
-
 Type=forking
 #PIDFile=$CONFIGFOLDER/$COIN_NAME.pid
-
 ExecStart=$COIN_PATH$COIN_DAEMON -daemon -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER
 ExecStop=-$COIN_PATH$COIN_CLI -conf=$CONFIGFOLDER/$CONFIG_FILE -datadir=$CONFIGFOLDER stop
-
 Restart=always
 PrivateTmp=true
 TimeoutStopSec=60s
 TimeoutStartSec=10s
 StartLimitInterval=120s
 StartLimitBurst=5
-
 [Install]
 WantedBy=multi-user.target
 EOF
@@ -83,7 +78,7 @@ function create_config() {
   cat << EOF > $CONFIGFOLDER/$CONFIG_FILE
 rpcuser=$RPCUSER
 rpcpassword=$RPCPASSWORD
-#rpcport=$RPC_PORT
+rpcport=$RPC_PORT
 rpcallowip=127.0.0.1
 listen=1
 server=1
@@ -120,13 +115,11 @@ function update_config() {
 logintimestamps=1
 maxconnections=16
 #bind=$NODEIP
+txindex=1
+listenonion=0
 masternode=1
 externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
-
-addnode=149.28.192.204:56120
-addnode=[2001:19f0:6001:36c:5400:1ff:fe88:72fc]:52426
-addnode=[2a02:7b40:b0df:8b57::1]:45330
 EOF
 }
 
@@ -255,4 +248,3 @@ checks
 prepare_system
 download_node
 setup_node
-
