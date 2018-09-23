@@ -26,7 +26,7 @@ After the MN is up and running, you need to configure the desktop wallet accordi
 Alias Address Privkey TxHash TxIndex
 ```
 * Alias: **MN1**
-* Address: **VPS_IP:PORT** :46120:
+* Address: **VPS_IP:46120**
 * Privkey: **Masternode Private Key**
 * TxHash: **First value from masternode outputs**
 * TxIndex:  **Second value from masternode outputs**
