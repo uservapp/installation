@@ -126,9 +126,14 @@ externalip=$NODEIP:$COIN_PORT
 mastermodeaddr=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
-addnode=95.179.142.149
-addnode=149.28.90.92
-addnode=149.28.192.204
+addnode=66.42.65.70
+addnode=80.240.20.79
+addnode=209.250.239.239
+addnode=149.28.35.210
+addnode=94.16.123.79
+addnode=95.216.109.206
+addnode=169.1.19.150
+addnode=95.216.109.204
 
 EOF
 }
