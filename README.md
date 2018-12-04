@@ -15,7 +15,7 @@ Wait until you request "Private Key" and paste your "masternode genkey" generate
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
 1. Open the UservCoin Desktop Wallet.  
 2. Go to RECEIVE and create a New Address: (Example): **MN1**  
-3. Send **3000** USERV to **MN1**. You need to send all 3000 coins in one single transaction.
+3. Send **30000** USERV to **MN1**. You need to send all 30000 coins in one single transaction.
 4. Wait for 15 confirmations.  
 5. Go to **Tools -> "Debug Window - Console"**  
 6. Type the following command and copy the generated key to Notepad: **masternode genkey**  And **masternode outputs**
