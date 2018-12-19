@@ -41,7 +41,8 @@ mn1 127.0.0.1:46120 U3HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84
 12. Select your MN and click **Start Alias** to start it.
 13. Alternatively, open **Debug Console** and type:
 ```
-masternode start-alias MN1
+startmasternode alias 0 (mymnalias)
+  Example: startmasternode alias 0 MN1
 ```
 14. Login to your VPS and check your masternode status by running the following command:
 ```
