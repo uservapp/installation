@@ -1,16 +1,16 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='userv.conf'
-CONFIGFOLDER='/root/.userv'
-COIN_DAEMON='uservd'
-COIN_CLI='userv-cli'
+CONFIG_FILE='userx.conf'
+CONFIGFOLDER='/root/.userx'
+COIN_DAEMON='userxd'
+COIN_CLI='userx-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/uservapp/uservcoin/releases/download/v2.0.2.0/userv-2.0.2.0-x86_64-linux-gnu.tar.gz'
+COIN_TGZ='https://github.com/uservapp/userx/releases/download/v1.0.0.0/userx-1.0.0.0-x86_64-linux-gnu.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='Userv'
-COIN_PORT=46120
-RPC_PORT=46121
+COIN_NAME='UserX'
+COIN_PORT=46130
+RPC_PORT=46131
 
 NODEIP=$(curl -s4 api.ipify.org)
 
@@ -126,14 +126,16 @@ externalip=$NODEIP:$COIN_PORT
 mastermodeaddr=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
-addnode=66.42.65.70
-addnode=80.240.20.79
-addnode=209.250.239.239
-addnode=149.28.35.210
-addnode=94.16.123.79
-addnode=95.216.109.206
-addnode=169.1.19.150
-addnode=95.216.109.204
+addnode=193.37.212.194
+addnode=95.179.188.208
+addnode=209.250.236.19
+addnode=104.238.131.165
+addnode=86.57.164.166
+whitelist=193.37.212.194
+whitelist=95.179.188.208
+whitelist=209.250.236.19
+whitelist=104.238.131.165
+whitelist=86.57.164.166
 
 EOF
 }
