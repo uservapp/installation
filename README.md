@@ -1,11 +1,11 @@
 # UservCoin
-Shell script to install a [UservCoin Masternode](http://uservcoin.com/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
+Shell script to install a [UserxCoin Masternode](http://uservcoin.com/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
 ***
 
 ## Installation
 ```
-wget -N https://raw.githubusercontent.com/uservapp/installation/master/userv_install.sh
-bash userv_install.sh
+wget -N https://raw.githubusercontent.com/uservapp/installation/master/userx_install.sh
+bash userx_install.sh
 ```
 Wait until you request "Private Key" and paste your "masternode genkey" generated in the following steps.
 ***
@@ -13,9 +13,9 @@ Wait until you request "Private Key" and paste your "masternode genkey" generate
 ## Desktop wallet setup  
 
 After the MN is up and running, you need to configure the desktop wallet accordingly. Here are the steps:  
-1. Open the UservCoin Desktop Wallet.  
+1. Open the UserxCoin Desktop Wallet.  
 2. Go to RECEIVE and create a New Address: (Example): **MN1**  
-3. Send **30000** USERV to **MN1**. You need to send all 30000 coins in one single transaction.
+3. Send **2000** USERV to **MN1**. You need to send all 2000 coins in one single transaction.
 4. Wait for 15 confirmations.  
 5. Go to **Tools -> "Debug Window - Console"**  
 6. Type the following command and copy the generated key to Notepad: **masternode genkey**  And **masternode outputs**
@@ -26,13 +26,13 @@ After the MN is up and running, you need to configure the desktop wallet accordi
 Alias Address Privkey TxHash TxIndex
 ```
 * Alias: **MN1**
-* Address: **VPS_IP:46120**
+* Address: **VPS_IP:46130**
 * Privkey: **Masternode Private Key**
 * TxHash: **First value from masternode outputs**
 * TxIndex:  **Second value from masternode outputs**
 ```
 Example: 
-mn1 127.0.0.1:46120 U3HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
+mn1 127.0.0.1:46130 X3HaYBVUCYjEMeeH1Y4sBGLALQZE1Yc1K64xiqgX37tGBDQL8Xg 2bcd3c84c84f87eaa86e4e56834c92927a07f9e18718810b92e0d0324456a67c 0
 
 ```
 9. Save and close the file.
@@ -46,22 +46,22 @@ startmasternode alias 0 (mymnalias)
 ```
 14. Login to your VPS and check your masternode status by running the following command:
 ```
-userv-cli masternode status
+userx-cli masternode status
 ```
 ***
 
 ## Usage:
 ```
-userv-cli masternode status  
-userv-cli getinfo
+userx-cli masternode status  
+userx-cli getinfo
 ```
-Also, if you want to check/start/stop **Userv**, run one of the following commands as **root**:
+Also, if you want to check/start/stop **Userx**, run one of the following commands as **root**:
 
 ```
-systemctl status Userv #To check if UservCoin service is running  
-systemctl start Userv #To start UservCoin service  
-systemctl stop Userv #To stop UservCoin service  
-systemctl is-enabled Userv #To check if UservCoin service is enabled on boot  
+systemctl status Userx #To check if UserxCoin service is running  
+systemctl start Userx #To start UserxCoin service  
+systemctl stop Userx #To stop UserxCoin service  
+systemctl is-enabled Userx #To check if UserxCoin service is enabled on boot  
 ```  
 ***
 
