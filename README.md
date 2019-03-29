@@ -1,4 +1,4 @@
-# UservCoin
+# UserxCoin
 Shell script to install a [UserxCoin Masternode](http://uservcoin.com/) on a Linux server running Ubuntu 16.04. Use it on your own risk.
 ***
 
